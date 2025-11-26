@@ -50,7 +50,7 @@ export default function Home() {
         </h1>
 
         <p className="text-gray-200 text-lg leading-relaxed mb-8 max-w-xl">
-          Sloane Sterling, PA-C, blends clinical expertise with AI-driven
+          Sloane Sterling blends clinical expertise with AI-driven
           innovation — elevating patient experience, workflow efficiency,
           and data clarity across modern healthcare systems.
         </p>
@@ -160,7 +160,7 @@ export default function Home() {
       <h2 className="text-4xl font-bold text-[#0A2A43] mb-6">About Sloane Sterling, PA-C</h2>
 
       <p className="text-gray-700 text-lg leading-relaxed mb-6">
-        Sloane Sterling is a Physician Associate-Certified clinician and healthcare innovator transforming patient
+        Sloane Sterling is a healthcare provider and healthcare innovator transforming patient
         experience through intelligent, patient-centered digital technologies.
       </p>
 
