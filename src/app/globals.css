@@ -1,0 +1,313 @@
+@import "tailwindcss";
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* =============================== */
+/*    HERO RING ROTATION LOOPS     */
+/* =============================== */
+
+@keyframes rotateVerySlow {
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(360deg) }
+}
+@keyframes rotateSuperSlow {
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(-360deg) }
+}
+@keyframes rotateUltraSlow {
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(360deg) }
+}
+
+.animate-rotate-slow {
+  animation: rotateVerySlow 55s linear infinite;
+}
+.animate-rotate-slower {
+  animation: rotateSuperSlow 75s linear infinite;
+}
+.animate-rotate-slowest {
+  animation: rotateUltraSlow 95s linear infinite;
+}
+
+/* Parallax when hero in view */
+.parallax-ring {
+  transition: transform 0.3s ease-out;
+}
+html:has(.hero-inview) .parallax-ring:nth-child(1) {
+  transform: translateY(-6px);
+}
+html:has(.hero-inview) .parallax-ring:nth-child(2) {
+  transform: translateY(-12px);
+}
+html:has(.hero-inview) .parallax-ring:nth-child(3) {
+  transform: translateY(-18px);
+}
+
+/* =============================== */
+/*     HERO ORBITING ORBS (x3)     */
+/* =============================== */
+
+@keyframes orbitMain {
+  0% { transform: rotate(0deg) translateX(230px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(230px) rotate(-360deg); }
+}
+@keyframes orbitMid {
+  0% { transform: rotate(0deg) translateX(170px) rotate(0deg); }
+  100% { transform: rotate(-360deg) translateX(170px) rotate(360deg); }
+}
+@keyframes orbitInner {
+  0% { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+
+.animate-orbit-main {
+  animation: orbitMain 9s linear infinite;
+}
+.animate-orbit-mid {
+  animation: orbitMid 14s linear infinite;
+}
+.animate-orbit-inner {
+  animation: orbitInner 6s linear infinite;
+}
+
+/* =============================== */
+/*  INNOVATION SECTION ORB TRIO    */
+/* =============================== */
+
+@keyframes orbitSmall {
+  0% { transform: rotate(0deg) translateX(110px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(110px) rotate(-360deg); }
+}
+@keyframes orbitSmallOuter {
+  0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+  100% { transform: rotate(-360deg) translateX(150px) rotate(360deg); }
+}
+@keyframes orbitSmallFast {
+  0% { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+
+.animate-orbit-small {
+  animation: orbitSmall 12s linear infinite;
+}
+.animate-orbit-small-outer {
+  animation: orbitSmallOuter 18s linear infinite;
+}
+.animate-orbit-small-fast {
+  animation: orbitSmallFast 7s linear infinite;
+}
+
+/* =============================== */
+/*   CTA CLICK DATA RING PULSE     */
+/* =============================== */
+
+@keyframes pulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 63, 181, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 18px rgba(255, 63, 181, 0);
+  }
+}
+.pulse-ring {
+  animation: pulseRing 0.45s ease-out;
+}
+
+/* =============================== */
+/*   SLOANE HOLOGRAM SHIMMER       */
+/* =============================== */
+
+@keyframes hologramShimmer {
+  0%   { opacity: 0.3; filter: hue-rotate(0deg) brightness(1); }
+  50%  { opacity: 0.55; filter: hue-rotate(25deg) brightness(1.15); }
+  100% { opacity: 0.3; filter: hue-rotate(0deg) brightness(1); }
+}
+.holo-shimmer {
+  animation: hologramShimmer 5s ease-in-out infinite;
+}
+
+/* =============================== */
+/*        IMAGE HOVER TILT         */
+/* =============================== */
+
+.tilt-hover {
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+.tilt-hover:hover {
+  transform: perspective(600px) rotateX(4deg) rotateY(-4deg) scale(1.03);
+  filter: brightness(1.1);
+}
+
+/* =============================== */
+/*       BREATHING GLOW            */
+/* =============================== */
+
+@keyframes breatheGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 18px rgba(255, 127, 191, 0.15));
+  }
+  50% {
+    filter: drop-shadow(0 0 34px rgba(142, 230, 255, 0.35));
+  }
+}
+.breathe-glow {
+  animation: breatheGlow 6s ease-in-out infinite;
+}
+/* ====================================================== */
+/*     A) FAINT ORB TRAILS (SpaceX-style ion plumes)      */
+/* ====================================================== */
+
+.orb-trail {
+  position: relative;
+}
+
+.orb-trail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 140%;
+  height: 140%;
+  border-radius: 50%;
+  transform: translate(-20%, -20%) scale(1.3);
+  background: radial-gradient(
+    circle,
+    rgba(255, 63, 181, 0.35),
+    rgba(255, 63, 181, 0.0) 70%
+  );
+  filter: blur(18px);
+  opacity: 0.35;
+  animation: orbTrailFade 4s ease-in-out infinite alternate;
+}
+
+@keyframes orbTrailFade {
+  0% { opacity: 0.15; }
+  100% { opacity: 0.45; }
+}
+
+/* ====================================================== */
+/*  C) ORBIT SPEED BOOST WHEN HERO SCROLLS INTO VIEW       */
+/* ====================================================== */
+
+.hero-boost .animate-orbit-main {
+  animation-duration: 7s !important;
+}
+.hero-boost .animate-orbit-mid {
+  animation-duration: 11s !important;
+}
+.hero-boost .animate-orbit-inner {
+  animation-duration: 4s !important;
+}
+
+/* fade back to normal */
+@keyframes boostFadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* ====================================================== */
+/*   E) AI GRID BACKGROUND (HERO ONLY — subtle!)           */
+/* ====================================================== */
+
+.hero-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(0deg,  rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  opacity: 0.20;
+  z-index: 1;
+}
+
+.hero-grid::after {
+  /* soft blue glow from bottom */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at bottom,
+    rgba(142, 230, 255, 0.25),
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+/* ====================================================== */
+/*                 HERO VISUAL UPGRADE PACK               */
+/*     Faster rotation • Glow streaks • Ring markers      */
+/* ====================================================== */
+
+/* ------------------------- */
+/* 1) FASTER RING ROTATION   */
+/* ------------------------- */
+
+.animate-rotate-slow {
+  animation: rotateVerySlow 18s linear infinite !important;
+}
+.animate-rotate-slower {
+  animation: rotateSuperSlow 28s linear infinite !important;
+}
+.animate-rotate-slowest {
+  animation: rotateUltraSlow 40s linear infinite !important;
+}
+
+/* ---------------------------- */
+/* 2) VISIBLE RING MARKERS      */
+/* ---------------------------- */
+
+.ring-marker::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px rgba(255,255,255,0.9);
+  z-index: 3;
+}
+
+/* ---------------------------------- */
+/* 3) CYBER GLOW STREAK TRAIL (RINGS) */
+/* ---------------------------------- */
+
+.ring-glow::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: conic-gradient(
+    rgba(142,230,255,0.25),
+    rgba(255,63,181,0.25),
+    rgba(255,255,255,0.15),
+    rgba(142,230,255,0.25)
+  );
+  filter: blur(32px);
+  opacity: 0.3;
+  animation: rotateSuperSlow 18s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------- */
+/* 4) STRONGER PARALLAX EFFECT (DEPTH SHIFT WHEN IN VIEW)    */
+/* --------------------------------------------------------- */
+
+html:has(.hero-inview) .parallax-ring:nth-child(1) {
+  transform: translateY(-20px) scale(1.04);
+}
+
+html:has(.hero-inview) .parallax-ring:nth-child(2) {
+  transform: translateY(-32px) scale(1.06);
+}
+
+html:has(.hero-inview) .parallax-ring:nth-child(3) {
+  transform: translateY(-48px) scale(1.08);
+}
