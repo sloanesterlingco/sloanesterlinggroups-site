@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./Footer";
+import SectionObserver from "./components/SectionObserver";
+import PageTransition from "./components/PageTransition";
 
 export const metadata: Metadata = {
   title: "Sloane Sterling, PA-C | Healthcare Innovation & AI Integration",
   description:
-    "Sloane Sterling, PA-C blends clinical expertise with modern AI systems to elevate patient care, workflow efficiency, and intelligent medical data. Founder of Sloane Sterling Groups and MyHealthVaultAI.",
+    "Sloane Sterling, PA-C blends clinical expertise with modern AI systems to elevate patient care, workflow efficiency, and intelligent medical data.",
 
   metadataBase: new URL("https://sloanesterling.com"),
 
   openGraph: {
     title: "Sloane Sterling — Healthcare Redefined",
     description:
-      "Leading healthcare innovation through AI-enhanced workflows, precision design, and intelligent patient experience.",
+      "AI-enhanced healthcare innovation, precision design, and intelligent patient workflows.",
     url: "https://sloanesterling.com",
     siteName: "Sloane Sterling Groups",
     images: [
@@ -64,7 +66,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* --- PERSON SCHEMA --- */}
+        {/* PERSON SCHEMA */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -72,25 +74,23 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Sloane Sterling, PA-C",
-              alternateName: "Sloane Sterling",
-              jobTitle: "Physician Associate | Healthcare AI Innovator",
+              jobTitle: "Physician Associate & Healthcare AI Innovator",
               url: "https://sloanesterling.com",
               image: "https://sloanesterling.com/sloane-og-banner.png",
               worksFor: {
                 "@type": "Organization",
                 name: "Sloane Sterling Groups",
-                url: "https://sloanesterling.com",
               },
               sameAs: [
-                "https://www.linkedin.com/in/sloanesterling",
-                "https://twitter.com/SloaneSterling",
                 "https://www.instagram.com/sloanesterling",
+                "https://twitter.com/SloaneSterling",
+                "https://www.linkedin.com/in/sloanesterling",
               ],
             }),
           }}
         />
 
-        {/* --- ORGANIZATION SCHEMA --- */}
+        {/* ORGANIZATION SCHEMA */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -100,29 +100,6 @@ export default function RootLayout({
               name: "Sloane Sterling Groups",
               url: "https://sloanesterling.com",
               logo: "https://sloanesterling.com/sloane-og-banner.png",
-              sameAs: [
-                "https://twitter.com/SloaneSterling",
-                "https://www.linkedin.com/company/sloane-sterling-groups",
-              ],
-            }),
-          }}
-        />
-
-        {/* --- BREADCRUMB SCHEMA --- */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://sloanesterling.com",
-                },
-              ],
             }),
           }}
         />
@@ -130,7 +107,18 @@ export default function RootLayout({
 
       <body className="antialiased bg-white">
         <Navbar />
-        <main className="pt-20">{children}</main>
+
+        {/* Apple-style smooth fade-in */}
+        <PageTransition />
+
+        {/* Section observation for scroll animations */}
+        <SectionObserver />
+
+        {/* Wrap children inside transition container */}
+        <main id="page-wrapper" className="page-transition pt-20">
+          {children}
+        </main>
+
         <Footer />
       </body>
     </html>

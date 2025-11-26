@@ -68,7 +68,7 @@ export default function Navbar() {
         {/* RIGHT — aligned MyHealthVaultAI logo */}
         <div className="hidden md:flex items-center">
           <Image
-            src="/MHV-logo.png"
+            src="/mhv-logo.png"
             alt="MyHealthVaultAI Logo"
             width={145}
             height={40}
@@ -131,7 +131,7 @@ export default function Navbar() {
 
           <div className="pt-4 border-t border-gray-200 flex justify-center">
             <Image
-              src="/MHV-logo.png"
+              src="/mhv-logo.png"
               alt="MyHealthVaultAI Logo"
               width={150}
               height={40}
