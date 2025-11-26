@@ -157,7 +157,7 @@ export default function Home() {
     </div>
 
     <div className="section-right">
-      <h2 className="text-4xl font-bold text-[#0A2A43] mb-6">About Sloane Sterling, PA-C</h2>
+      <h2 className="text-4xl font-bold text-[#0A2A43] mb-6">About Sloane Sterling</h2>
 
       <p className="text-gray-700 text-lg leading-relaxed mb-6">
         Sloane Sterling is a healthcare provider and healthcare innovator transforming patient
