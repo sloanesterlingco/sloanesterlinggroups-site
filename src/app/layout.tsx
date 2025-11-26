@@ -6,9 +6,9 @@ import SectionObserver from "./components/SectionObserver";
 import PageTransition from "./components/PageTransition";
 
 export const metadata: Metadata = {
-  title: "Sloane Sterling, PA-C | Healthcare Innovation & AI Integration",
+  title: "Sloane Sterling Group | Healthcare Innovation & AI Integration",
   description:
-    "Sloane Sterling, PA-C blends clinical expertise with modern AI systems to elevate patient care, workflow efficiency, and intelligent medical data.",
+    "Sloane Sterling blends clinical expertise with modern AI systems to elevate patient care, workflow efficiency, and intelligent medical data.",
 
   metadataBase: new URL("https://sloanesterling.com"),
 
