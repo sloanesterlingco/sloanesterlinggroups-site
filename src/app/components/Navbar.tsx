@@ -62,7 +62,9 @@ export default function Navbar() {
           <NavLink name="MyHealthVaultAI" href="#myhealthvaultai" />
           <NavLink name="AI Workflow Support" href="#ai-workflow" />
           <NavLink name="Innovation" href="#innovation" />
-          <NavLink name="LuxeSculpt" href="#luxesculpt" />
+
+          {/* ✅ REPLACED: LuxeSculpt → Visit Recorder (real page) */}
+          <NavLink name="Visit Recorder" href="/visit-recorder" />
         </div>
 
         {/* RIGHT — aligned MyHealthVaultAI logo */}
@@ -103,11 +105,7 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       {open && (
         <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-md px-6 py-6 space-y-6 text-lg font-medium">
-          <MobileLink
-            name="About"
-            href="#about"
-            close={() => setOpen(false)}
-          />
+          <MobileLink name="About" href="#about" close={() => setOpen(false)} />
           <MobileLink
             name="MyHealthVaultAI"
             href="#myhealthvaultai"
@@ -123,9 +121,11 @@ export default function Navbar() {
             href="#innovation"
             close={() => setOpen(false)}
           />
+
+          {/* ✅ REPLACED: LuxeSculpt → Visit Recorder */}
           <MobileLink
-            name="LuxeSculpt"
-            href="#luxesculpt"
+            name="Visit Recorder"
+            href="/visit-recorder"
             close={() => setOpen(false)}
           />
 
