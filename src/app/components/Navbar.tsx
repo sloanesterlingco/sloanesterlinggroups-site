@@ -22,12 +22,11 @@ export default function Navbar() {
       className="
         fixed top-0 left-0 right-0 z-50
         backdrop-blur-xl
-        bg-[rgba(255,63,181,0.16)]  /* translucent pink */
+        bg-[rgba(255,63,181,0.16)]
         border-b border-white/40
-        shadow-[0_10px_35px_rgba(37,99,235,0.30)]  /* subtle blue glow */
+        shadow-[0_10px_35px_rgba(37,99,235,0.30)]
         transition-all duration-500
 
-        /* animated pink–blue line at bottom */
         before:content-[''] before:absolute before:left-0 before:right-0 before:bottom-0
         before:h-[3px]
         before:bg-[linear-gradient(90deg,#ff3fb5,#71d8ff,#ff3fb5)]
@@ -62,7 +61,9 @@ export default function Navbar() {
           <NavLink name="MyHealthVaultAI" href="#myhealthvaultai" />
           <NavLink name="AI Workflow Support" href="#ai-workflow" />
           <NavLink name="Innovation" href="#innovation" />
-          <NavLink name="LuxeSculpt" href="#luxesculpt" />
+
+          {/* ✅ REPLACED: LuxeSculpt → Visit Recorder */}
+          <NavLink name="Visit Recorder" href="/visit-recorder" />
         </div>
 
         {/* RIGHT — aligned MyHealthVaultAI logo */}
@@ -103,11 +104,7 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       {open && (
         <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-md px-6 py-6 space-y-6 text-lg font-medium">
-          <MobileLink
-            name="About"
-            href="#about"
-            close={() => setOpen(false)}
-          />
+          <MobileLink name="About" href="#about" close={() => setOpen(false)} />
           <MobileLink
             name="MyHealthVaultAI"
             href="#myhealthvaultai"
@@ -123,9 +120,11 @@ export default function Navbar() {
             href="#innovation"
             close={() => setOpen(false)}
           />
+
+          {/* ✅ REPLACED: LuxeSculpt → Visit Recorder */}
           <MobileLink
-            name="LuxeSculpt"
-            href="#luxesculpt"
+            name="Visit Recorder"
+            href="/visit-recorder"
             close={() => setOpen(false)}
           />
 
