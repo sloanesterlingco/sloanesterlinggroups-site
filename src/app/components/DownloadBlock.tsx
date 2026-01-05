@@ -1,7 +1,7 @@
 "use client";
 
 type DownloadBlockProps = {
-  googlePlayUrl: string;
+  googlePlayUrl?: string;
 };
 
 export default function DownloadBlock({ googlePlayUrl }: DownloadBlockProps) {
@@ -14,20 +14,23 @@ export default function DownloadBlock({ googlePlayUrl }: DownloadBlockProps) {
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">
                 Download Visit Recorder
               </h2>
+
               <p className="mt-4 text-slate-600 text-lg leading-relaxed">
                 Capture your visit with consent, then review a clear AI summary with key
                 decisions, changes, and next steps.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <a
-                  href={googlePlayUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold bg-[#0A2A43] text-white hover:opacity-95 transition"
-                >
-                  Get it on Google Play
-                </a>
+                {googlePlayUrl ? (
+                  <a
+                    href={googlePlayUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold bg-[#0A2A43] text-white hover:opacity-95 transition"
+                  >
+                    Get it on Google Play
+                  </a>
+                ) : null}
 
                 <a
                   href="/privacy"
@@ -43,7 +46,10 @@ export default function DownloadBlock({ googlePlayUrl }: DownloadBlockProps) {
             </div>
 
             <div className="rounded-2xl bg-slate-50 border border-slate-200 p-6">
-              <h3 className="text-base font-semibold text-slate-900">Built for follow-through</h3>
+              <h3 className="text-base font-semibold text-slate-900">
+                Built for follow-through
+              </h3>
+
               <ul className="mt-4 space-y-3 text-slate-700">
                 <li>• Record the full conversation with consent</li>
                 <li>• Get a structured AI summary after the visit</li>
@@ -51,7 +57,10 @@ export default function DownloadBlock({ googlePlayUrl }: DownloadBlockProps) {
               </ul>
 
               <div className="mt-6 text-sm text-slate-500">
-                Questions? Visit <span className="font-medium text-slate-700">/support</span>
+                Questions? Visit{" "}
+                <a href="/support" className="font-medium text-slate-700 underline">
+                  /support
+                </a>
               </div>
             </div>
           </div>
