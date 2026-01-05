@@ -3,8 +3,6 @@
 import Image from "next/image";
 import Reveal from "../components/Reveal";
 import type { MouseEvent } from "react";
-import DownloadBlock from "../components/DownloadBlock";
-
 
 /* CTA pulse animation handler (matches home) */
 function triggerPulse(e: MouseEvent<HTMLAnchorElement>) {
@@ -12,6 +10,9 @@ function triggerPulse(e: MouseEvent<HTMLAnchorElement>) {
   btn.classList.add("pulse-ring");
   setTimeout(() => btn.classList.remove("pulse-ring"), 350);
 }
+
+const VR_LOGO = "/visit-recorder/VR-Logo.png";
+const SHT_LOGO = "/visit-recorder/sht-logo.png"; // <-- put Sterling logo here
 
 export default function VisitRecorderPage() {
   return (
@@ -25,24 +26,30 @@ export default function VisitRecorderPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
           <Reveal>
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-white/10 border border-white/20">
+              {/* TWO LOGOS ROW */}
+              <div className="flex items-center gap-4 mb-6">
+                {/* Visit Recorder logo */}
+                <div className="relative w-12 h-12 rounded-2xl overflow-hidden bg-white/10 border border-white/20">
                   <Image
-                    src="/visit-recorder/VR-Logo.png"
+                    src={VR_LOGO}
                     alt="Visit Recorder logo"
                     fill
-                    className="object-contain p-1"
+                    className="object-contain p-2"
                     loading="lazy"
+                    sizes="48px"
                   />
                 </div>
 
-                <div className="leading-tight">
-                  <p className="text-white font-semibold tracking-wide">
-                    Visit Recorder
-                  </p>
-                  <p className="text-[#8EE6FF] text-sm opacity-90">
-                    Sterling Health Technologies
-                  </p>
+                {/* Sterling Health Technologies logo */}
+                <div className="relative h-12 w-[220px] rounded-2xl overflow-hidden bg-white/10 border border-white/20">
+                  <Image
+                    src={SHT_LOGO}
+                    alt="Sterling Health Technologies logo"
+                    fill
+                    className="object-contain px-3 py-2"
+                    loading="lazy"
+                    sizes="220px"
+                  />
                 </div>
               </div>
 
@@ -84,15 +91,17 @@ export default function VisitRecorderPage() {
           </Reveal>
 
           <Reveal>
+            {/* HERO IMAGE — show full image (no cropping) */}
             <div className="relative">
-              <div className="relative w-full h-[420px] md:h-[520px] rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
+              <div className="relative w-full h-[420px] md:h-[520px] rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-white/5">
                 <Image
                   src="/visit-recorder/visit-recorder-hero.png"
                   alt="Visit Recorder hero preview"
                   fill
                   loading="lazy"
-                  className="object-cover"
+                  className="object-contain p-6"
                   priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
 
@@ -126,19 +135,25 @@ export default function VisitRecorderPage() {
 
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="rounded-2xl border border-gray-200 bg-[#F7F9FC] p-5 shadow-sm">
-                  <p className="text-[#0A2A43] font-semibold">No missed instructions</p>
+                  <p className="text-[#0A2A43] font-semibold">
+                    No missed instructions
+                  </p>
                   <p className="text-gray-600 mt-2 text-sm leading-relaxed">
                     Review key details after you leave the room.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-gray-200 bg-[#F7F9FC] p-5 shadow-sm">
-                  <p className="text-[#0A2A43] font-semibold">No reliance on memory</p>
+                  <p className="text-[#0A2A43] font-semibold">
+                    No reliance on memory
+                  </p>
                   <p className="text-gray-600 mt-2 text-sm leading-relaxed">
                     Reduce stress and uncertainty after the visit.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-gray-200 bg-[#F7F9FC] p-5 shadow-sm">
-                  <p className="text-[#0A2A43] font-semibold">A reviewable record</p>
+                  <p className="text-[#0A2A43] font-semibold">
+                    A reviewable record
+                  </p>
                   <p className="text-gray-600 mt-2 text-sm leading-relaxed">
                     Keep a clear, accessible account of what happened.
                   </p>
@@ -153,13 +168,15 @@ export default function VisitRecorderPage() {
 
           <Reveal>
             <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <div className="relative w-full h-[560px] rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white">
+              {/* UI IMAGE — show full image (no cropping) */}
+              <div className="relative w-full h-[560px] rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-[#0A2A43]/5">
                 <Image
                   src="/visit-recorder/visit-recorder-ui.jpg"
                   alt="Visit Recorder recording screen"
                   fill
                   loading="lazy"
-                  className="object-cover"
+                  className="object-contain p-6"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
 
@@ -224,13 +241,15 @@ export default function VisitRecorderPage() {
           </Reveal>
 
           <Reveal>
-            <div className="relative w-full h-[520px] rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-white">
+            {/* PRODUCT IMAGE — show full image (no cropping) */}
+            <div className="relative w-full h-[520px] rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-[#0A2A43]/5">
               <Image
                 src="/visit-recorder/visit-recorder.jpg"
                 alt="Visit Recorder product preview"
                 fill
                 loading="lazy"
-                className="object-cover"
+                className="object-contain p-6"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </Reveal>
@@ -327,6 +346,7 @@ export default function VisitRecorderPage() {
             </div>
           </Reveal>
 
+          {/* Sample card unchanged */}
           <Reveal>
             <div className="rounded-3xl border border-gray-200 bg-white shadow-xl overflow-hidden">
               <div className="px-7 py-6 border-b border-gray-100 flex items-center justify-between">
@@ -390,7 +410,6 @@ export default function VisitRecorderPage() {
         </div>
       </section>
 
-<DownloadBlock googlePlayUrl="https://play.google.com/store/apps/details?id=YOUR_APP_ID" />
       {/* ============================== */}
       {/*      CLOSING / CTA             */}
       {/* ============================== */}
