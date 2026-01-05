@@ -1,88 +1,61 @@
 "use client";
 
-import Image from "next/image";
-import Reveal from "../components/Reveal";
-import DownloadBlock from "../components/DownloadBlock";
-import type { MouseEvent } from "react";
-
-function triggerPulse(e: MouseEvent<HTMLAnchorElement>) {
-  const btn = e.currentTarget;
-  btn.classList.add("pulse-ring");
-  setTimeout(() => btn.classList.remove("pulse-ring"), 350);
-}
-
 type DownloadBlockProps = {
-  googlePlayUrl?: string; // optional until you have it
+  googlePlayUrl: string;
 };
 
 export default function DownloadBlock({ googlePlayUrl }: DownloadBlockProps) {
   return (
     <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <Reveal>
-          <div className="rounded-3xl border border-gray-200 bg-[#F7F9FC] p-10 lg:p-12 shadow-sm overflow-hidden relative">
-            <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-[#8EE6FF]/25 blur-3xl" />
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-[#ff3fb5]/20 blur-3xl" />
+      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+        <div className="rounded-3xl border border-slate-200 bg-white p-8 md:p-12 shadow-sm">
+          <div className="grid gap-8 md:grid-cols-2 md:items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">
+                Download Visit Recorder
+              </h2>
+              <p className="mt-4 text-slate-600 text-lg leading-relaxed">
+                Capture your visit with consent, then review a clear AI summary with key
+                decisions, changes, and next steps.
+              </p>
 
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              {/* LEFT */}
-              <div>
-                <h2 className="text-4xl font-bold text-[#0A2A43]">
-                  Get Visit Recorder
-                </h2>
-                <p className="text-gray-700 text-lg leading-relaxed mt-5 max-w-xl">
-                  Record medical visits with consent, then review a structured AI
-                  summary so you know exactly what changed and what to do next.
-                </p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <a
+                  href={googlePlayUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold bg-[#0A2A43] text-white hover:opacity-95 transition"
+                >
+                  Get it on Google Play
+                </a>
 
-                <div className="mt-8 flex flex-wrap gap-4">
-                  {googlePlayUrl ? (
-                    <a
-                      href={googlePlayUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      onClick={triggerPulse}
-                      className="inline-flex items-center justify-center bg-[#0A2A43] text-white px-8 py-4 rounded-full text-lg font-semibold shadow-md hover:opacity-95 transition-all"
-                    >
-                      Get it on Google Play
-                    </a>
-                  ) : (
-                    <a
-                      href="mailto:sloane@sloanesterling.com?subject=Visit%20Recorder%20Google%20Play%20Link"
-                      onClick={triggerPulse}
-                      className="inline-flex items-center justify-center bg-[#0A2A43] text-white px-8 py-4 rounded-full text-lg font-semibold shadow-md hover:opacity-95 transition-all"
-                    >
-                      Request the Google Play link
-                    </a>
-                  )}
-
-                  <a
-                    href="/visit-recorder/privacy"
-                    onClick={triggerPulse}
-                    className="inline-flex items-center justify-center bg-white text-[#0A2A43] px-8 py-4 rounded-full text-lg font-medium shadow-md border border-[#0A2A43]/10 hover:bg-[#F7F9FC] transition-all"
-                  >
-                    Privacy Policy
-                  </a>
-                </div>
-
-                <p className="text-gray-600 text-sm mt-5">
-                  Consent required. Privacy-first by design.
-                </p>
+                <a
+                  href="/privacy"
+                  className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold border border-slate-300 text-slate-900 hover:bg-slate-50 transition"
+                >
+                  Privacy Policy
+                </a>
               </div>
 
-              {/* RIGHT */}
-              <div className="relative w-full h-[380px] rounded-3xl overflow-hidden border border-gray-200 shadow-xl bg-black">
-                <Image
-                  src="/visit-recorder/visit-recorder-ui.jpg"
-                  alt="Visit Recorder app interface"
-                  fill
-                  loading="lazy"
-                  className="object-cover"
-                />
+              <p className="mt-4 text-sm text-slate-500">
+                Recording requires explicit consent. Subscription billing is managed through RevenueCat.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-slate-50 border border-slate-200 p-6">
+              <h3 className="text-base font-semibold text-slate-900">Built for follow-through</h3>
+              <ul className="mt-4 space-y-3 text-slate-700">
+                <li>• Record the full conversation with consent</li>
+                <li>• Get a structured AI summary after the visit</li>
+                <li>• Export, share, and translate with Pro tools</li>
+              </ul>
+
+              <div className="mt-6 text-sm text-slate-500">
+                Questions? Visit <span className="font-medium text-slate-700">/support</span>
               </div>
             </div>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
