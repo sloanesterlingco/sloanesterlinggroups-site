@@ -22,12 +22,14 @@ export default function VisitRecorderPage() {
       {/* ============================== */}
       <section
   className="
-    w-full bg-[#0A2A43]
-    pt-20 md:pt-24  /* tighter to navbar (navbar is ~80px tall) */
-    pb-14
+    w-full
+    bg-[#0A2A43]
+    pt-16 md:pt-20   /* reduced top padding (closer to navbar) */
+    pb-16
     relative overflow-hidden
   "
 >
+  {/* soft glow */}
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_65%)]" />
 
   <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
@@ -35,29 +37,17 @@ export default function VisitRecorderPage() {
       {/* LEFT: TEXT */}
       <Reveal>
         <div className="max-w-xl">
-          {/* Logos row (simple, no pills) */}
-          <div className="flex items-center gap-5 mb-6">
-            <div className="relative w-12 h-12">
-              <Image
-                src="/visit-recorder/VR-Logo.png"
-                alt="Visit Recorder logo"
-                fill
-                className="object-contain"
-                sizes="48px"
-                loading="lazy"
-              />
-            </div>
-
-            <div className="relative h-10 w-[260px]">
-              <Image
-                src="/visit-recorder/sht-logo.png"
-                alt="Sterling Health Technologies logo"
-                fill
-                className="object-contain"
-                sizes="260px"
-                loading="lazy"
-              />
-            </div>
+          {/* micro header (like homepage) */}
+          <div className="mb-6">
+            <p className="text-white text-sm lg:text-base tracking-wide font-semibold opacity-80">
+              STERLING HEALTH TECHNOLOGIES
+            </p>
+            <p className="text-[#8EE6FF] text-sm lg:text-base tracking-wide mt-1">
+              Visit Recorder App
+            </p>
+            <p className="text-white/70 text-sm lg:text-base tracking-wide mt-1">
+              Healthcare Redefined
+            </p>
           </div>
 
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
@@ -97,23 +87,24 @@ export default function VisitRecorderPage() {
         </div>
       </Reveal>
 
-      {/* RIGHT: HERO IMAGE */}
+      {/* RIGHT: IMAGE (bigger, no box) */}
       <Reveal>
-        <div className="relative w-full">
-          <div className="relative w-full h-[420px] md:h-[520px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-white/5">
+        <div className="relative w-full flex items-center justify-center">
+          {/* This is intentionally NOT inside a card */}
+          <div className="relative w-full max-w-[560px] aspect-square">
             <Image
               src="/visit-recorder/vr-hero.png"
               alt="Visit Recorder app preview"
               fill
               priority
-              className="object-contain p-6 md:p-8"
+              className="object-contain"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
 
           {/* subtle glow accents */}
-          <div className="absolute -bottom-8 -left-8 w-28 h-28 rounded-full bg-[#8EE6FF]/20 blur-2xl" />
-          <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#ff3fb5]/20 blur-2xl" />
+          <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-[#8EE6FF]/18 blur-3xl" />
+          <div className="absolute -top-14 -right-14 w-44 h-44 rounded-full bg-[#ff3fb5]/18 blur-3xl" />
         </div>
       </Reveal>
     </div>
