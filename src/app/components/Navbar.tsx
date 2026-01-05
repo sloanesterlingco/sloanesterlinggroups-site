@@ -58,11 +58,11 @@ export default function Navbar() {
 
         {/* DESKTOP LINKS */}
         <div className="hidden md:flex gap-10 text-[#0A2A43] font-medium">
-          <NavLink name="About" href="#about" />
-          <NavLink name="MyHealthVaultAI" href="#myhealthvaultai" />
-          <NavLink name="AI Workflow Support" href="#ai-workflow" />
-          <NavLink name="Innovation" href="#innovation" />
-          <NavLink name="LuxeSculpt" href="#luxesculpt" />
+          <NavLink name="About" href="/#about" />
+          <NavLink name="MyHealthVaultAI" href="/#myhealthvaultai" />
+          <NavLink name="AI Workflow Support" href="/#ai-workflow" />
+          <NavLink name="Innovation" href="/#innovation" />
+          <NavLink name="Visit Recorder" href="/visit-recorder" />
         </div>
 
         {/* RIGHT — aligned MyHealthVaultAI logo */}
@@ -103,29 +103,25 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       {open && (
         <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-md px-6 py-6 space-y-6 text-lg font-medium">
-          <MobileLink
-            name="About"
-            href="#about"
-            close={() => setOpen(false)}
-          />
+          <MobileLink name="About" href="/#about" close={() => setOpen(false)} />
           <MobileLink
             name="MyHealthVaultAI"
-            href="#myhealthvaultai"
+            href="/#myhealthvaultai"
             close={() => setOpen(false)}
           />
           <MobileLink
             name="AI Workflow Support"
-            href="#ai-workflow"
+            href="/#ai-workflow"
             close={() => setOpen(false)}
           />
           <MobileLink
             name="Innovation"
-            href="#innovation"
+            href="/#innovation"
             close={() => setOpen(false)}
           />
           <MobileLink
-            name="LuxeSculpt"
-            href="#luxesculpt"
+            name="Visit Recorder"
+            href="/visit-recorder"
             close={() => setOpen(false)}
           />
 
