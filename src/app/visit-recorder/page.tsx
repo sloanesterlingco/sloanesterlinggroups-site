@@ -12,66 +12,58 @@ function triggerPulse(e: MouseEvent<HTMLAnchorElement>) {
 }
 
 const VR_LOGO = "/visit-recorder/VR-Logo.png";
-const SHT_LOGO = "/visit-recorder/sht-logo.png"; // ensure this exists in /public/visit-recorder/
+const SHT_LOGO = "/visit-recorder/sht-logo.png";
 
 export default function VisitRecorderPage() {
   return (
     <>
       {/* ============================== */}
-      {/*   HERO IMAGE (FULL WIDTH)      */}
+      {/*            HERO                */}
       {/* ============================== */}
-      <section className="w-full bg-[#0A2A43] pt-28 md:pt-32 pb-10 relative overflow-hidden">
+      <section className="w-full bg-[#0A2A43] pt-28 md:pt-32 pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_65%)]" />
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12 relative z-10">
+          {/* HERO IMAGE (clean, no giant glass frame) */}
           <Reveal>
-            <div className="relative w-full rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-white/5">
-              {/* Use aspect ratio so it never squishes */}
-              <div className="relative w-full aspect-[16/7] md:aspect-[16/6]">
+            <div className="w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black/10">
+              <div className="relative w-full aspect-[16/8] md:aspect-[16/7]">
                 <Image
                   src="/visit-recorder/visit-recorder-hero.png"
                   alt="Visit Recorder hero preview"
                   fill
                   priority
-                  className="object-contain p-6 md:p-8"
+                  className="object-cover"
                   sizes="100vw"
                 />
               </div>
             </div>
           </Reveal>
-        </div>
-      </section>
 
-      {/* ============================== */}
-      {/*   HERO TEXT (BELOW IMAGE)      */}
-      {/* ============================== */}
-      <section className="w-full bg-[#0A2A43] pb-16 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+          {/* HERO TEXT */}
           <Reveal>
-            <div className="max-w-3xl">
-              {/* TWO LOGOS ROW */}
-              <div className="flex items-center gap-4 mb-6">
-                {/* Visit Recorder logo — BIGGER */}
-                <div className="relative w-16 h-16 rounded-2xl overflow-hidden bg-white/10 border border-white/20">
+            <div className="mt-10 max-w-4xl">
+              {/* LOGOS (no pills, no boxes) */}
+              <div className="flex items-center gap-5 mb-6">
+                <div className="relative w-12 h-12">
                   <Image
                     src={VR_LOGO}
                     alt="Visit Recorder logo"
                     fill
-                    className="object-contain p-2"
-                    loading="lazy"
-                    sizes="64px"
+                    className="object-contain"
+                    sizes="48px"
+                    priority={false}
                   />
                 </div>
 
-                {/* Sterling Health Technologies logo */}
-                <div className="relative h-16 w-[260px] rounded-2xl overflow-hidden bg-white/10 border border-white/20">
+                <div className="relative h-10 w-[260px]">
                   <Image
                     src={SHT_LOGO}
                     alt="Sterling Health Technologies logo"
                     fill
-                    className="object-contain px-4 py-3"
-                    loading="lazy"
+                    className="object-contain"
                     sizes="260px"
+                    priority={false}
                   />
                 </div>
               </div>
