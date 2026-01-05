@@ -107,7 +107,7 @@ export default function Footer() {
               <i className="fa-brands fa-twitter text-2xl"></i>
             </a>
             <a
-              href="https://www.linkedin.com/in/sloane-sterling-2431533a5/"
+              href="https://www.linkedin.com/in/sloane-sterling-health/"
               target="_blank"
               rel="noreferrer"
               className="footer-social"
