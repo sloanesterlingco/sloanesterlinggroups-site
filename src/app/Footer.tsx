@@ -91,7 +91,7 @@ export default function Footer() {
           {/* Socials */}
           <div className="flex gap-5 mt-6">
             <a
-              href="https://instagram.com/sloanesterling"
+              href="https://instagram.com/sloanesterlingco"
               target="_blank"
               rel="noreferrer"
               className="footer-social"
@@ -99,7 +99,7 @@ export default function Footer() {
               <i className="fa-brands fa-instagram text-2xl"></i>
             </a>
             <a
-              href="https://twitter.com/SloaneSterling"
+              href="https://x.com/VisitRecorder"
               target="_blank"
               rel="noreferrer"
               className="footer-social"
@@ -107,7 +107,7 @@ export default function Footer() {
               <i className="fa-brands fa-twitter text-2xl"></i>
             </a>
             <a
-              href="https://linkedin.com/in/sloanesterling"
+              href="https://www.linkedin.com/in/sloane-sterling-2431533a5/"
               target="_blank"
               rel="noreferrer"
               className="footer-social"
