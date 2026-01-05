@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Reveal from "../../components/Reveal";
+import Reveal from "../components/Reveal";
+import DownloadBlock from "../components/DownloadBlock";
 import type { MouseEvent } from "react";
 
 function triggerPulse(e: MouseEvent<HTMLAnchorElement>) {

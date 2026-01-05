@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Reveal from "../components/Reveal";
 import type { MouseEvent } from "react";
-import DownloadBlock from "./components/DownloadBlock";
+import DownloadBlock from "../components/DownloadBlock";
 
 
 /* CTA pulse animation handler (matches home) */
