@@ -59,12 +59,12 @@ export default function Home() {
 
               <div className="flex flex-wrap items-center gap-6">
                 <a
-                  href="mailto:sloane@sloanesterling.com"
-                  onClick={triggerPulse}
-                  className="bg-[#FFD87D] text-[#0A2A43] px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-[#f3c86e] transition-all"
-                >
-                  Contact Sloane
-                </a>
+  href="/visit-recorder"
+  onClick={triggerPulse}
+  className="bg-[#FFD87D] text-[#0A2A43] px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-[#f3c86e] transition-all"
+>
+  Explore Visit Recorder
+</a>
 
                 <a
                   href="#myhealthvaultai"

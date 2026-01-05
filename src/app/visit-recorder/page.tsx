@@ -12,54 +12,77 @@ function triggerPulse(e: MouseEvent<HTMLAnchorElement>) {
 }
 
 const VR_LOGO = "/visit-recorder/VR-Logo.png";
-const SHT_LOGO = "/visit-recorder/sht-logo.png"; // <-- put Sterling logo here
+const SHT_LOGO = "/visit-recorder/sht-logo.png"; // ensure this exists in /public/visit-recorder/
 
 export default function VisitRecorderPage() {
   return (
     <>
       {/* ============================== */}
-      {/*            HERO                */}
+      {/*   HERO IMAGE (FULL WIDTH)      */}
       {/* ============================== */}
-      <section className="w-full bg-[#0A2A43] pt-28 md:pt-32 pb-16 relative overflow-hidden">
+      <section className="w-full bg-[#0A2A43] pt-28 md:pt-32 pb-10 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_65%)]" />
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
           <Reveal>
-            <div>
+            <div className="relative w-full rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-white/5">
+              {/* Use aspect ratio so it never squishes */}
+              <div className="relative w-full aspect-[16/7] md:aspect-[16/6]">
+                <Image
+                  src="/visit-recorder/visit-recorder-hero.png"
+                  alt="Visit Recorder hero preview"
+                  fill
+                  priority
+                  className="object-contain p-6 md:p-8"
+                  sizes="100vw"
+                />
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ============================== */}
+      {/*   HERO TEXT (BELOW IMAGE)      */}
+      {/* ============================== */}
+      <section className="w-full bg-[#0A2A43] pb-16 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+          <Reveal>
+            <div className="max-w-3xl">
               {/* TWO LOGOS ROW */}
               <div className="flex items-center gap-4 mb-6">
-                {/* Visit Recorder logo */}
-                <div className="relative w-12 h-12 rounded-2xl overflow-hidden bg-white/10 border border-white/20">
+                {/* Visit Recorder logo — BIGGER */}
+                <div className="relative w-16 h-16 rounded-2xl overflow-hidden bg-white/10 border border-white/20">
                   <Image
                     src={VR_LOGO}
                     alt="Visit Recorder logo"
                     fill
                     className="object-contain p-2"
                     loading="lazy"
-                    sizes="48px"
+                    sizes="64px"
                   />
                 </div>
 
                 {/* Sterling Health Technologies logo */}
-                <div className="relative h-12 w-[220px] rounded-2xl overflow-hidden bg-white/10 border border-white/20">
+                <div className="relative h-16 w-[260px] rounded-2xl overflow-hidden bg-white/10 border border-white/20">
                   <Image
                     src={SHT_LOGO}
                     alt="Sterling Health Technologies logo"
                     fill
-                    className="object-contain px-3 py-2"
+                    className="object-contain px-4 py-3"
                     loading="lazy"
-                    sizes="220px"
+                    sizes="260px"
                   />
                 </div>
               </div>
 
-              <h1 className="text-white text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Medical conversation capture with{" "}
                 <span className="text-[#8EE6FF]">AI summaries</span> built for
                 clarity and follow-through.
               </h1>
 
-              <p className="text-gray-200 text-lg leading-relaxed mt-6 max-w-xl">
+              <p className="text-gray-200 text-lg leading-relaxed mt-6">
                 Visit Recorder securely records medical visits and transforms
                 them into structured AI summaries so patients, families, and care
                 teams can clearly understand what changed, what to do next, and
@@ -89,24 +112,90 @@ export default function VisitRecorderPage() {
               </p>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ============================== */}
+      {/*          EXPLORE               */}
+      {/* ============================== */}
+      <section id="explore" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <Reveal>
+            <div className="max-w-3xl">
+              <h2 className="text-4xl font-bold text-[#0A2A43]">
+                Record the conversation — not just your memory
+              </h2>
+              <p className="text-gray-700 text-lg leading-relaxed mt-6">
+                Medical visits are dense, emotional, and often overwhelming.
+                Important details—medication changes, instructions, and follow-up
+                timelines—are easy to miss or forget.
+              </p>
+              <p className="text-gray-700 text-lg leading-relaxed mt-4">
+                Visit Recorder allows patients to securely record their medical
+                visit <strong>with consent</strong>, ensuring the full
+                conversation is captured accurately.
+              </p>
+
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="rounded-2xl border border-gray-200 bg-[#F7F9FC] p-5 shadow-sm">
+                  <p className="text-[#0A2A43] font-semibold">
+                    No missed instructions
+                  </p>
+                  <p className="text-gray-600 mt-2 text-sm leading-relaxed">
+                    Review key details after you leave the room.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-gray-200 bg-[#F7F9FC] p-5 shadow-sm">
+                  <p className="text-[#0A2A43] font-semibold">
+                    No reliance on memory
+                  </p>
+                  <p className="text-gray-600 mt-2 text-sm leading-relaxed">
+                    Reduce stress and uncertainty after the visit.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-gray-200 bg-[#F7F9FC] p-5 shadow-sm">
+                  <p className="text-[#0A2A43] font-semibold">
+                    A reviewable record
+                  </p>
+                  <p className="text-gray-600 mt-2 text-sm leading-relaxed">
+                    Keep a clear, accessible account of what happened.
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-gray-600 text-sm mt-6">
+                Designed to fit naturally into real clinical encounters.
+              </p>
+            </div>
+          </Reveal>
 
           <Reveal>
-            {/* HERO IMAGE — show full image (no cropping) */}
-            <div className="relative">
-              <div className="relative w-full h-[420px] md:h-[520px] rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-white/5">
+            <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+              <div className="relative w-full h-[560px] rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-[#0A2A43]/5">
                 <Image
-                  src="/visit-recorder/visit-recorder-hero.png"
-                  alt="Visit Recorder hero preview"
+                  src="/visit-recorder/visit-recorder-ui.jpg"
+                  alt="Visit Recorder recording screen"
                   fill
                   loading="lazy"
                   className="object-contain p-6"
-                  priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
 
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-[#8EE6FF]/20 blur-2xl" />
-              <div className="absolute -top-8 -right-10 w-28 h-28 rounded-full bg-[#ff3fb5]/20 blur-2xl" />
+              <div className="rounded-3xl border border-gray-200 bg-[#F7F9FC] p-8 shadow-sm">
+                <h3 className="text-2xl font-bold text-[#0A2A43]">
+                  Consent required
+                </h3>
+                <p className="text-gray-700 text-lg leading-relaxed mt-4">
+                  Visit Recorder is built around explicit acknowledgment and
+                  consent. Users stay in control of when recording happens and
+                  what gets saved.
+                </p>
+                <p className="text-gray-600 text-sm mt-5">
+                  Always follow local laws and clinic policies regarding
+                  recording.
+                </p>
+              </div>
             </div>
           </Reveal>
         </div>
