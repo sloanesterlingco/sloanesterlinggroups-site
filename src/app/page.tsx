@@ -59,17 +59,18 @@ export default function Home() {
 
               <div className="flex flex-wrap items-center gap-6">
                 <a
-  href="/visit-recorder"
-  onClick={triggerPulse}
-  className="bg-[#FFD87D] text-[#0A2A43] px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-[#f3c86e] transition-all"
->
-  Explore Visit Recorder
-</a>
+                  href="/visit-recorder"
+                  onClick={triggerPulse}
+                  className="bg-[#FFD87D] text-[#0A2A43] px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-[#f3c86e] transition-all"
+                >
+                  Explore Visit Recorder
+                </a>
 
+                {/* UPDATED: MATCHING PILL BUTTON */}
                 <a
                   href="#myhealthvaultai"
                   onClick={triggerPulse}
-                  className="text-[#8EE6FF] text-lg font-medium hover:underline"
+                  className="bg-transparent text-[#8EE6FF] px-10 py-4 rounded-full text-lg font-semibold shadow-lg border-2 border-[#8EE6FF] hover:bg-[#8EE6FF] hover:text-[#0A2A43] transition-all"
                 >
                   Explore MyHealthVaultAI
                 </a>
@@ -89,14 +90,20 @@ export default function Home() {
               }`}
             >
               {/* ROTATING RINGS */}
-              <div className="absolute w-[420px] h-[420px] rounded-full border-[6px] border-white/25
-                      animate-rotate-slow mobile-disable-anim parallax-ring ring-marker ring-glow" />
+              <div
+                className="absolute w-[420px] h-[420px] rounded-full border-[6px] border-white/25
+                      animate-rotate-slow mobile-disable-anim parallax-ring ring-marker ring-glow"
+              />
 
-              <div className="absolute w-[500px] h-[500px] rounded-full border-[6px] border-white/18
-                      animate-rotate-slower mobile-disable-anim parallax-ring ring-marker ring-glow" />
+              <div
+                className="absolute w-[500px] h-[500px] rounded-full border-[6px] border-white/18
+                      animate-rotate-slower mobile-disable-anim parallax-ring ring-marker ring-glow"
+              />
 
-              <div className="absolute w-[580px] h-[580px] rounded-full border-[4px] border-white/12
-                      animate-rotate-slowest mobile-disable-anim parallax-ring ring-marker ring-glow" />
+              <div
+                className="absolute w-[580px] h-[580px] rounded-full border-[4px] border-white/12
+                      animate-rotate-slowest mobile-disable-anim parallax-ring ring-marker ring-glow"
+              />
 
               {/* ORBITING ORBS */}
               <div className="absolute w-[580px] h-[580px]">
@@ -365,12 +372,15 @@ export default function Home() {
                 Explore Visit Recorder
               </a>
 
+              {/* UPDATED: GOOGLE PLAY DOWNLOAD BUTTON */}
               <a
-                href="/visit-recorder#sample-summary"
+                href="https://play.google.com/store/apps/details?id=com.visitrecorder.app"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={triggerPulse}
                 className="inline-block bg-white text-[#0A2A43] px-8 py-4 rounded-full text-lg font-medium shadow-md border border-[#0A2A43]/10 hover:bg-[#F7F9FC] transition-all"
               >
-                View a sample summary
+                Download on Google Play
               </a>
             </div>
 
