@@ -14,6 +14,9 @@ function triggerPulse(e: MouseEvent<HTMLAnchorElement>) {
 const VR_LOGO = "/visit-recorder/VR-Logo.png";
 const SHT_LOGO = "/visit-recorder/sht-logo.png";
 
+const GOOGLE_PLAY_URL =
+  "https://play.google.com/store/apps/details?id=com.visitrecorder.app";
+
 export default function VisitRecorderPage() {
   return (
     <>
@@ -21,179 +24,96 @@ export default function VisitRecorderPage() {
       {/*            HERO                */}
       {/* ============================== */}
       <section
-  className="
-    w-full
-    bg-[#0A2A43]
-    pt-16 md:pt-20   /* reduced top padding (closer to navbar) */
-    pb-16
-    relative overflow-hidden
-  "
->
-  {/* soft glow */}
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_65%)]" />
+        className="
+          w-full
+          bg-[#0A2A43]
+          pt-16 md:pt-20   /* reduced top padding (closer to navbar) */
+          pb-16
+          relative overflow-hidden
+        "
+      >
+        {/* soft glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_65%)]" />
 
-  <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-      {/* LEFT: TEXT */}
-      <Reveal>
-        <div className="max-w-xl">
-          {/* micro header (like homepage) */}
-          <div className="mb-6">
-            <p className="text-white text-sm lg:text-base tracking-wide font-semibold opacity-80">
-              STERLING HEALTH TECHNOLOGIES
-            </p>
-            <p className="text-[#8EE6FF] text-sm lg:text-base tracking-wide mt-1">
-              Visit Recorder App
-            </p>
-            <p className="text-white/70 text-sm lg:text-base tracking-wide mt-1">
-              Healthcare Redefined
-            </p>
-          </div>
-
-          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Medical conversation capture with{" "}
-            <span className="text-[#8EE6FF]">AI summaries</span> built for
-            clarity and follow-through.
-          </h1>
-
-          <p className="text-gray-200 text-lg leading-relaxed mt-6">
-            Visit Recorder securely records medical visits and transforms them
-            into structured AI summaries so patients, families, and care teams
-            can clearly understand what changed, what to do next, and why it
-            matters.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href="#explore"
-              onClick={triggerPulse}
-              className="bg-[#ff3fb5] text-white px-8 py-4 rounded-full text-lg font-medium shadow-md hover:bg-[#e036a9] transition-all"
-            >
-              Explore Visit Recorder
-            </a>
-
-            <a
-              href="#sample-summary"
-              onClick={triggerPulse}
-              className="bg-white/10 text-white px-8 py-4 rounded-full text-lg font-medium shadow-md border border-white/20 hover:bg-white/15 transition-all"
-            >
-              View a sample summary
-            </a>
-          </div>
-
-          <p className="text-gray-300 text-sm mt-5">
-            Consent required. Privacy-first by design.
-          </p>
-        </div>
-      </Reveal>
-
-      {/* RIGHT: IMAGE (bigger, no box) */}
-      <Reveal>
-        <div className="relative w-full flex items-center justify-center">
-          {/* This is intentionally NOT inside a card */}
-          <div className="relative w-full max-w-[560px] aspect-square">
-            <Image
-              src="/visit-recorder/vr-hero.png"
-              alt="Visit Recorder app preview"
-              fill
-              priority
-              className="object-contain"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-
-          {/* subtle glow accents */}
-          <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-[#8EE6FF]/18 blur-3xl" />
-          <div className="absolute -top-14 -right-14 w-44 h-44 rounded-full bg-[#ff3fb5]/18 blur-3xl" />
-        </div>
-      </Reveal>
-    </div>
-  </div>
-</section>
-
-      {/* ============================== */}
-      {/*          EXPLORE               */}
-      {/* ============================== */}
-      <section id="explore" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <Reveal>
-            <div className="max-w-3xl">
-              <h2 className="text-4xl font-bold text-[#0A2A43]">
-                Record the conversation — not just your memory
-              </h2>
-              <p className="text-gray-700 text-lg leading-relaxed mt-6">
-                Medical visits are dense, emotional, and often overwhelming.
-                Important details—medication changes, instructions, and follow-up
-                timelines—are easy to miss or forget.
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed mt-4">
-                Visit Recorder allows patients to securely record their medical
-                visit <strong>with consent</strong>, ensuring the full
-                conversation is captured accurately.
-              </p>
-
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="rounded-2xl border border-gray-200 bg-[#F7F9FC] p-5 shadow-sm">
-                  <p className="text-[#0A2A43] font-semibold">
-                    No missed instructions
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            {/* LEFT: TEXT */}
+            <Reveal>
+              <div className="max-w-xl">
+                {/* micro header (like homepage) */}
+                <div className="mb-6">
+                  <p className="text-white text-sm lg:text-base tracking-wide font-semibold opacity-80">
+                    STERLING HEALTH TECHNOLOGIES
                   </p>
-                  <p className="text-gray-600 mt-2 text-sm leading-relaxed">
-                    Review key details after you leave the room.
+                  <p className="text-[#8EE6FF] text-sm lg:text-base tracking-wide mt-1">
+                    Visit Recorder App
+                  </p>
+                  <p className="text-white/70 text-sm lg:text-base tracking-wide mt-1">
+                    Healthcare Redefined
                   </p>
                 </div>
-                <div className="rounded-2xl border border-gray-200 bg-[#F7F9FC] p-5 shadow-sm">
-                  <p className="text-[#0A2A43] font-semibold">
-                    No reliance on memory
-                  </p>
-                  <p className="text-gray-600 mt-2 text-sm leading-relaxed">
-                    Reduce stress and uncertainty after the visit.
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-gray-200 bg-[#F7F9FC] p-5 shadow-sm">
-                  <p className="text-[#0A2A43] font-semibold">
-                    A reviewable record
-                  </p>
-                  <p className="text-gray-600 mt-2 text-sm leading-relaxed">
-                    Keep a clear, accessible account of what happened.
-                  </p>
-                </div>
-              </div>
 
-              <p className="text-gray-600 text-sm mt-6">
-                Designed to fit naturally into real clinical encounters.
-              </p>
-            </div>
-          </Reveal>
+                <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                  Medical conversation capture with{" "}
+                  <span className="text-[#8EE6FF]">AI summaries</span> built for
+                  clarity and follow-through.
+                </h1>
 
-          <Reveal>
-            <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <div className="relative w-full h-[560px] rounded-3xl overflow-hidden shadow-xl border border-gray-200 bg-[#0A2A43]/5">
-                <Image
-                  src="/visit-recorder/visit-recorder-ui.jpg"
-                  alt="Visit Recorder recording screen"
-                  fill
-                  loading="lazy"
-                  className="object-contain p-6"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-
-              <div className="rounded-3xl border border-gray-200 bg-[#F7F9FC] p-8 shadow-sm">
-                <h3 className="text-2xl font-bold text-[#0A2A43]">
-                  Consent required
-                </h3>
-                <p className="text-gray-700 text-lg leading-relaxed mt-4">
-                  Visit Recorder is built around explicit acknowledgment and
-                  consent. Users stay in control of when recording happens and
-                  what gets saved.
+                <p className="text-gray-200 text-lg leading-relaxed mt-6">
+                  Visit Recorder securely records medical visits and transforms
+                  them into structured AI summaries so patients, families, and
+                  care teams can clearly understand what changed, what to do
+                  next, and why it matters.
                 </p>
-                <p className="text-gray-600 text-sm mt-5">
-                  Always follow local laws and clinic policies regarding
-                  recording.
+
+                <div className="mt-8 flex flex-wrap items-center gap-4">
+                  <a
+                    href="#explore"
+                    onClick={triggerPulse}
+                    className="bg-[#ff3fb5] text-white px-8 py-4 rounded-full text-lg font-medium shadow-md hover:bg-[#e036a9] transition-all"
+                  >
+                    Explore Visit Recorder
+                  </a>
+
+                  {/* UPDATED: Google Play download */}
+                  <a
+                    href={GOOGLE_PLAY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={triggerPulse}
+                    className="bg-white/10 text-white px-8 py-4 rounded-full text-lg font-medium shadow-md border border-white/20 hover:bg-white/15 transition-all"
+                  >
+                    Download on Google Play
+                  </a>
+                </div>
+
+                <p className="text-gray-300 text-sm mt-5">
+                  Consent required. Privacy-first by design.
                 </p>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+
+            {/* RIGHT: IMAGE (bigger, no box) */}
+            <Reveal>
+              <div className="relative w-full flex items-center justify-center">
+                {/* This is intentionally NOT inside a card */}
+                <div className="relative w-full max-w-[560px] aspect-square">
+                  <Image
+                    src="/visit-recorder/vr-hero.png"
+                    alt="Visit Recorder app preview"
+                    fill
+                    priority
+                    className="object-contain"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+
+                {/* subtle glow accents */}
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-[#8EE6FF]/18 blur-3xl" />
+                <div className="absolute -top-14 -right-14 w-44 h-44 rounded-full bg-[#ff3fb5]/18 blur-3xl" />
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
