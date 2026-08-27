@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://sloanesterling.com/sitemap.xml
