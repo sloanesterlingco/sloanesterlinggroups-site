@@ -218,7 +218,6 @@ export default function Home() {
       </section>
 
       <section className="company-section" id="company">
-        <div className="company-mark"><BrandMark compact /></div>
         <div className="company-copy">
           <p className="eyebrow">About the company</p>
           <h2>Clinical experience translated into better systems.</h2>
