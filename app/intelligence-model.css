@@ -1,0 +1,154 @@
+/* Sterling Intelligence Model — focused hero visual upgrade */
+.intelligence-model {
+  border: 1px solid rgba(126, 204, 229, .32);
+  background:
+    linear-gradient(rgba(53,162,191,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(53,162,191,.035) 1px, transparent 1px),
+    radial-gradient(circle at 50% 48%, rgba(44,154,211,.18), transparent 34%),
+    linear-gradient(145deg, rgba(13,50,83,.9), rgba(7,29,52,.82));
+  background-size: 28px 28px, 28px 28px, auto, auto;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 22px 55px rgba(1,13,27,.18);
+  overflow: hidden;
+}
+.intelligence-model::before,
+.intelligence-model::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+.intelligence-model::before {
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%,-50%);
+  background: repeating-radial-gradient(circle, transparent 0 38px, rgba(97,201,230,.075) 39px 40px);
+}
+.intelligence-model::after {
+  inset: 54px 24px 58px;
+  opacity: .5;
+  background:
+    linear-gradient(90deg, transparent 0 10%, rgba(83,199,229,.28) 10% 10.3%, transparent 10.3% 89.7%, rgba(83,199,229,.28) 89.7% 90%, transparent 90%),
+    linear-gradient(0deg, transparent 0 12%, rgba(83,199,229,.2) 12% 12.3%, transparent 12.3% 87.7%, rgba(83,199,229,.2) 87.7% 88%, transparent 88%);
+}
+.model-label {
+  color: #b8dbe7;
+  font-size: 11px;
+  letter-spacing: .19em;
+  position: relative;
+  z-index: 3;
+}
+.model-label::after {
+  content: "CLINICAL REASONING ARCHITECTURE";
+  display: block;
+  margin-top: 5px;
+  color: #5fb9d2;
+  font-size: 8px;
+  letter-spacing: .15em;
+}
+.model-core { height: 350px; z-index: 2; }
+.model-core::before,
+.model-core::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.model-core::before {
+  width: 136px;
+  height: 136px;
+  border: 1px solid rgba(111,215,239,.45);
+  box-shadow: 0 0 34px rgba(43,167,211,.18), inset 0 0 28px rgba(61,177,215,.1);
+}
+.model-core::after {
+  width: 250px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(112,215,238,.42), transparent);
+  border-radius: 0;
+  box-shadow: 0 -125px 0 rgba(112,215,238,.12), 0 125px 0 rgba(112,215,238,.12);
+}
+.core-mark {
+  width: 94px;
+  height: 94px;
+  color: #fff;
+  background: radial-gradient(circle at 38% 30%, #76d9ef 0, #2f9fd1 42%, #176ca6 100%);
+  border: 2px solid rgba(220,248,255,.85);
+  box-shadow: 0 0 0 8px rgba(67,182,218,.09), 0 0 38px rgba(75,194,226,.42);
+}
+.core-mark::after {
+  content: "CLINICAL INTELLIGENCE";
+  position: absolute;
+  width: 150px;
+  top: 112px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #83d5e7;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  white-space: nowrap;
+}
+.orbit { border-color: rgba(112,210,234,.34); }
+.orbit-one { width: 214px; height: 214px; box-shadow: inset 0 0 25px rgba(57,167,205,.06); }
+.orbit-two { width: 304px; height: 304px; border-color: rgba(112,210,234,.26); }
+.node {
+  min-width: 104px;
+  text-align: center;
+  color: #eaf9fd;
+  background: rgba(12,49,78,.94);
+  border: 1px solid rgba(92,194,220,.55);
+  border-radius: 999px;
+  padding: 9px 13px 8px;
+  box-shadow: 0 0 18px rgba(45,163,199,.1);
+}
+.node::after {
+  display: block;
+  margin-top: 4px;
+  color: #83b9ca;
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: none;
+  white-space: nowrap;
+}
+.node-one::after { content: "Guardrails & protocols"; }
+.node-two::after { content: "Patient-specific signals"; }
+.node-three::after { content: "Science & outcomes"; }
+.node-four::after { content: "Clinician oversight"; }
+.node-one { top: 14px; }
+.node-two { right: 0; }
+.node-three { bottom: 13px; }
+.node-four { left: 0; }
+.model-footer {
+  position: relative;
+  z-index: 3;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  color: #b6d0dc;
+  border-top-color: rgba(110,204,226,.22);
+}
+.model-footer::after {
+  content: "Continuous learning";
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+  color: #b6d0dc;
+  background: radial-gradient(circle at 5px 50%, #55c7df 0 2px, transparent 3px);
+}
+.model-footer svg { color: #63c7df; }
+
+@media (max-width: 760px) {
+  .model-core { height: 315px; }
+  .intelligence-model::before { width: 350px; height: 350px; }
+  .orbit-two { width: 270px; height: 270px; }
+  .orbit-one { width: 190px; height: 190px; }
+  .node { min-width: 92px; padding: 8px 10px; font-size: 9px; }
+  .node::after { font-size: 6.5px; }
+  .model-footer { grid-template-columns: 1fr; gap: 10px; }
+  .model-footer::after { min-height: 1em; }
+}
