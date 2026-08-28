@@ -306,3 +306,30 @@ footer > div:last-child { grid-column: 1/-1; border-top: 1px solid #29445f; padd
   .platform-phone-left { left: -4px; }
   .platform-phone-right { right: -4px; }
 }
+
+/* MyHealthVaultAI mobile showcase */
+.healthvault-showcase { max-width: 1380px; margin: 90px auto 0; padding: 58px; border: 1px solid #285765; background: linear-gradient(135deg, #0d3441 0%, #0b2935 54%, #0b2537 100%); display: grid; grid-template-columns: .82fr 1.18fr; gap: 58px; align-items: center; overflow: hidden; }
+.healthvault-showcase-copy h3 { font-family: var(--serif); font-size: clamp(38px, 4vw, 58px); line-height: 1.04; font-weight: 400; margin: 14px 0 22px; color: white; }
+.healthvault-showcase-copy > p:not(.eyebrow) { color: #b9ced3; font-size: 15px; line-height: 1.8; max-width: 560px; }
+.healthvault-preview { border-color: #2e6570; background: rgba(5,35,42,.48); }
+.healthvault-feature-strip { max-width: 1380px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid #285765; border-top: 0; }
+.healthvault-feature-strip article { padding: 28px 25px; border-right: 1px solid #285765; }
+.healthvault-feature-strip article:last-child { border-right: 0; }
+.healthvault-feature-strip span { display: block; color: #6c969c; font-family: var(--serif); margin-bottom: 30px; }
+.healthvault-feature-strip strong { display: block; color: white; font-family: var(--serif); font-size: 20px; font-weight: 400; margin-bottom: 10px; }
+.healthvault-feature-strip p { margin: 0; color: #94adb3; font-size: 11px; line-height: 1.65; }
+.healthvault-showcase + .healthvault-feature-strip + .vascular-showcase { margin-top: 70px; }
+
+@media (max-width: 1050px) {
+  .healthvault-showcase { grid-template-columns: 1fr; }
+  .healthvault-feature-strip { grid-template-columns: 1fr 1fr; }
+  .healthvault-feature-strip article:nth-child(2) { border-right: 0; }
+  .healthvault-feature-strip article:nth-child(-n+2) { border-bottom: 1px solid #285765; }
+}
+@media (max-width: 720px) {
+  .healthvault-showcase { margin-top: 55px; padding: 34px 22px; gap: 36px; }
+  .healthvault-feature-strip { grid-template-columns: 1fr; }
+  .healthvault-feature-strip article { border-right: 0; border-bottom: 1px solid #285765; }
+  .healthvault-feature-strip article:last-child { border-bottom: 0; }
+  .healthvault-showcase + .healthvault-feature-strip + .vascular-showcase { margin-top: 48px; }
+}

@@ -173,6 +173,53 @@ export default function Home() {
           </article>
         </div>
 
+        <div className="healthvault-showcase" aria-label="MyHealthVaultAI mobile application">
+          <div className="healthvault-showcase-copy">
+            <p className="eyebrow light">MyHealthVaultAI Mobile</p>
+            <h3>One place to remember what happened next.</h3>
+            <p>MyHealthVaultAI helps patients organize medications, appointments, visit information, documents, and caregiver access across otherwise disconnected parts of care.</p>
+            <div className="platform-badges"><span>iOS</span><span>Android</span><span>Medication reminders</span><span>Care continuity</span></div>
+            <a className="showcase-link" href="https://myhealthvaultai.com/" target="_blank" rel="noreferrer">Explore MyHealthVaultAI <ArrowRight /></a>
+          </div>
+          <div className="platform-device-gallery healthvault-gallery" aria-label="MyHealthVaultAI on iOS and Android">
+            <div className="platform-preview healthvault-preview">
+              <div className="platform-preview-heading"><span>iOS</span><small>iPhone</small></div>
+              <div className="platform-phone-stack ios-stack">
+                <figure className="platform-phone platform-phone-main">
+                  <img src="/myhealthvault-ios-today.png" alt="MyHealthVaultAI Today screen on iOS" />
+                </figure>
+                <figure className="platform-phone platform-phone-side platform-phone-left">
+                  <img src="/myhealthvault-ios-medications.png" alt="MyHealthVaultAI medication management on iOS" />
+                </figure>
+                <figure className="platform-phone platform-phone-side platform-phone-right">
+                  <img src="/myhealthvault-ios-visits.png" alt="MyHealthVaultAI appointments on iOS" />
+                </figure>
+              </div>
+            </div>
+            <div className="platform-preview healthvault-preview">
+              <div className="platform-preview-heading"><span>Android</span><small>Mobile</small></div>
+              <div className="platform-phone-stack android-stack">
+                <figure className="platform-phone platform-phone-main">
+                  <img src="/myhealthvault-android-today-sanitized.jpg" alt="MyHealthVaultAI Today screen on Android" />
+                </figure>
+                <figure className="platform-phone platform-phone-side platform-phone-left">
+                  <img src="/myhealthvault-android-care.jpg" alt="MyHealthVaultAI Care Circle on Android" />
+                </figure>
+                <figure className="platform-phone platform-phone-side platform-phone-right">
+                  <img src="/myhealthvault-android-visits-sanitized.jpg" alt="MyHealthVaultAI appointments on Android" />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="healthvault-feature-strip">
+          <article><span>01</span><strong>Medication clarity</strong><p>Medication lists, reminder timing, label capture, and patient-confirmed changes help keep the active regimen understandable.</p></article>
+          <article><span>02</span><strong>Visit continuity</strong><p>Appointments, visit capture, structured summaries, and follow-up tasks keep important details from disappearing after the encounter.</p></article>
+          <article><span>03</span><strong>Records in context</strong><p>Documents and health information live alongside the visits and medication decisions they help explain.</p></article>
+          <article><span>04</span><strong>Caregiver connection</strong><p>Permission-based caregiver access supports continuity while keeping patient control visible and explicit.</p></article>
+        </div>
+
         <div className="vascular-showcase" aria-label="Sterling Vascular mobile application">
           <div className="vascular-showcase-copy">
             <p className="eyebrow light">Sterling Vascular Mobile</p>
