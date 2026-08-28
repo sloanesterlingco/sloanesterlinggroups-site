@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./intelligence-model.css";
 
 export const metadata: Metadata = {
   title: "Sterling Health Technologies | Responsible Healthcare Intelligence",
