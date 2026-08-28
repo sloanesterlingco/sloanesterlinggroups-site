@@ -229,3 +229,80 @@ footer > div:last-child { grid-column: 1/-1; border-top: 1px solid #29445f; padd
   footer > div:last-child { grid-column: 1; flex-direction: column; gap: 9px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Sterling Vascular mobile showcase */
+.vascular-showcase { max-width: 1380px; margin: 90px auto 0; padding: 58px; border: 1px solid #29445f; background: linear-gradient(135deg, #102d42 0%, #0b2537 100%); display: grid; grid-template-columns: .82fr 1.18fr; gap: 58px; align-items: center; overflow: hidden; }
+.vascular-showcase-copy h3 { font-family: var(--serif); font-size: clamp(38px, 4vw, 58px); line-height: 1.04; font-weight: 400; margin: 14px 0 22px; color: white; }
+.vascular-showcase-copy > p:not(.eyebrow) { color: #b7c8d4; font-size: 15px; line-height: 1.8; max-width: 560px; }
+.platform-badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 34px; }
+.platform-badges span { border: 1px solid #3d6078; border-radius: 999px; padding: 8px 12px; color: #c5d9e3; font-size: 10px; text-transform: uppercase; letter-spacing: .11em; font-weight: 800; }
+.showcase-link { display: inline-flex; align-items: center; gap: 10px; color: #a9e4e4; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; font-weight: 800; }
+.showcase-link svg { font-size: 15px; }
+.device-gallery { min-height: 620px; position: relative; }
+.phone-shot { position: absolute; margin: 0; width: 285px; border: 8px solid #071c2a; border-radius: 34px; background: #071c2a; box-shadow: 0 28px 65px rgba(0,0,0,.32); overflow: hidden; }
+.phone-shot img { width: 100%; height: auto; display: block; border-radius: 25px; }
+.phone-shot-main { z-index: 3; left: 50%; top: 0; transform: translateX(-50%); }
+.phone-shot-secondary { z-index: 2; left: 0; top: 80px; transform: rotate(-5deg); opacity: .94; }
+.phone-shot-tertiary { z-index: 1; right: 0; top: 82px; transform: rotate(5deg); opacity: .94; }
+.device-label { position: absolute; z-index: 4; top: 13px; left: 50%; transform: translateX(-50%); padding: 5px 9px; border-radius: 999px; background: rgba(7,28,42,.82); color: white; font-size: 8px; text-transform: uppercase; letter-spacing: .12em; font-weight: 800; }
+.vascular-feature-strip { max-width: 1380px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid #29445f; border-top: 0; }
+.vascular-feature-strip article { padding: 28px 25px; border-right: 1px solid #29445f; }
+.vascular-feature-strip article:last-child { border-right: 0; }
+.vascular-feature-strip span { display: block; color: #66849a; font-family: var(--serif); margin-bottom: 30px; }
+.vascular-feature-strip strong { display: block; color: white; font-family: var(--serif); font-size: 20px; font-weight: 400; margin-bottom: 10px; }
+.vascular-feature-strip p { margin: 0; color: #91a7b7; font-size: 11px; line-height: 1.65; }
+
+@media (max-width: 1050px) {
+  .vascular-showcase { grid-template-columns: 1fr; }
+  .device-gallery { max-width: 760px; width: 100%; margin: 0 auto; }
+  .vascular-feature-strip { grid-template-columns: 1fr 1fr; }
+  .vascular-feature-strip article:nth-child(2) { border-right: 0; }
+  .vascular-feature-strip article:nth-child(-n+2) { border-bottom: 1px solid #29445f; }
+}
+@media (max-width: 720px) {
+  .vascular-showcase { margin-top: 55px; padding: 34px 22px; gap: 36px; }
+  .device-gallery { min-height: 500px; }
+  .phone-shot { width: 225px; border-width: 6px; border-radius: 28px; }
+  .phone-shot img { border-radius: 21px; }
+  .phone-shot-main { left: 50%; }
+  .phone-shot-secondary { left: -55px; top: 80px; }
+  .phone-shot-tertiary { right: -55px; top: 80px; }
+  .vascular-feature-strip { grid-template-columns: 1fr; }
+  .vascular-feature-strip article { border-right: 0; border-bottom: 1px solid #29445f; }
+  .vascular-feature-strip article:last-child { border-bottom: 0; }
+}
+
+/* Dual-platform Sterling Vascular showcase */
+.platform-device-gallery { min-height: 640px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+.platform-preview { min-width: 0; border: 1px solid #29445f; background: rgba(5,24,37,.42); padding: 18px 14px 0; overflow: hidden; }
+.platform-preview-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 0 5px 13px; border-bottom: 1px solid rgba(78,110,133,.45); }
+.platform-preview-heading span { color: #e7f4f5; font-family: var(--serif); font-size: 23px; }
+.platform-preview-heading small { color: #7894a6; font-size: 8px; text-transform: uppercase; letter-spacing: .16em; font-weight: 800; }
+.platform-phone-stack { height: 570px; position: relative; margin-top: 16px; }
+.platform-phone { position: absolute; margin: 0; border: 6px solid #071c2a; border-radius: 27px; background: #071c2a; box-shadow: 0 24px 50px rgba(0,0,0,.30); overflow: hidden; }
+.platform-phone img { width: 100%; height: auto; display: block; border-radius: 20px; }
+.platform-phone-main { z-index: 3; width: 220px; left: 50%; top: 0; transform: translateX(-50%); }
+.platform-phone-side { z-index: 1; width: 170px; top: 112px; opacity: .86; }
+.platform-phone-left { left: -10px; transform: rotate(-4deg); }
+.platform-phone-right { right: -10px; transform: rotate(4deg); }
+.ios-stack .platform-phone-main { border-color: #0a1c2b; background: #0a1c2b; }
+.android-stack .platform-phone-main { border-color: #071c2a; background: #071c2a; }
+
+@media (max-width: 1180px) {
+  .platform-device-gallery { min-height: 610px; gap: 16px; }
+  .platform-phone-stack { height: 540px; }
+  .platform-phone-main { width: 205px; }
+  .platform-phone-side { width: 150px; }
+}
+@media (max-width: 1050px) {
+  .platform-device-gallery { min-height: 0; grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+  .platform-device-gallery { grid-template-columns: 1fr; gap: 18px; }
+  .platform-preview { padding: 16px 12px 0; }
+  .platform-phone-stack { height: 500px; max-width: 390px; margin: 14px auto 0; }
+  .platform-phone-main { width: 205px; }
+  .platform-phone-side { width: 145px; top: 98px; }
+  .platform-phone-left { left: -4px; }
+  .platform-phone-right { right: -4px; }
+}

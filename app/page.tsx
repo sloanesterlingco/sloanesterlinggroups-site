@@ -172,6 +172,53 @@ export default function Home() {
             <div className="platform-status"><span className="status-dot muted" /> Research horizon</div>
           </article>
         </div>
+
+        <div className="vascular-showcase" aria-label="Sterling Vascular mobile application">
+          <div className="vascular-showcase-copy">
+            <p className="eyebrow light">Sterling Vascular Mobile</p>
+            <h3>Clinical reference at the point of care.</h3>
+            <p>Built for clinicians who need fast access to vascular classifications, scoring tools, procedural checkpoints, and concise disease-management guidance without leaving the clinical workflow.</p>
+            <div className="platform-badges"><span>iOS</span><span>Android</span><span>Offline reference</span><span>Provider-focused</span></div>
+            <a className="showcase-link" href="https://sterlingvascular.com/" target="_blank" rel="noreferrer">Explore Sterling Vascular <ArrowRight /></a>
+          </div>
+          <div className="platform-device-gallery" aria-label="Sterling Vascular on iOS and Android">
+            <div className="platform-preview">
+              <div className="platform-preview-heading"><span>iOS</span><small>iPhone</small></div>
+              <div className="platform-phone-stack ios-stack">
+                <figure className="platform-phone platform-phone-main">
+                  <img src="/sterling-vascular-ios-home.png" alt="Sterling Vascular iOS home screen" />
+                </figure>
+                <figure className="platform-phone platform-phone-side platform-phone-left">
+                  <img src="/sterling-vascular-ios-library.png" alt="Sterling Vascular clinical library on iOS" />
+                </figure>
+                <figure className="platform-phone platform-phone-side platform-phone-right">
+                  <img src="/sterling-vascular-ios-rfa.png" alt="Sterling Vascular radiofrequency ablation reference on iOS" />
+                </figure>
+              </div>
+            </div>
+            <div className="platform-preview">
+              <div className="platform-preview-heading"><span>Android</span><small>Mobile</small></div>
+              <div className="platform-phone-stack android-stack">
+                <figure className="platform-phone platform-phone-main">
+                  <img src="/sterling-vascular-android-home.jpg" alt="Sterling Vascular Android home screen" />
+                </figure>
+                <figure className="platform-phone platform-phone-side platform-phone-left">
+                  <img src="/sterling-vascular-android-tools.jpg" alt="Sterling Vascular clinical tools on Android" />
+                </figure>
+                <figure className="platform-phone platform-phone-side platform-phone-right">
+                  <img src="/sterling-vascular-android-wounds.jpg" alt="Sterling Vascular venous ulcer reference on Android" />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="vascular-feature-strip">
+          <article><span>01</span><strong>Searchable library</strong><p>34 concise clinical references spanning classification, venous disease, thrombosis, wounds, and procedures.</p></article>
+          <article><span>02</span><strong>Point-of-care tools</strong><p>CEAP and VCSS scoring with repeatable clinical safety checks designed for fast use.</p></article>
+          <article><span>03</span><strong>Procedural guidance</strong><p>Provider-focused checkpoints for procedures such as superficial axial vein radiofrequency ablation.</p></article>
+          <article><span>04</span><strong>Disease pathways</strong><p>Structured guidance for complex presentations including C5–C6 venous ulcer management.</p></article>
+        </div>
       </section>
 
       <section className="section system-section">
